@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@ --parallel --buildsystem=cmake
+
+override_dh_clean:
+	dh_clean
+	rm -rf images/wavedec.tiff
+
+

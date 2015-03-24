@@ -1,0 +1,17 @@
+Source: sopt
+Section: science
+Priority: optional
+Maintainer: Gijs Molenaar (launchpad ppa build key) <gijs@pythonic.nl>
+Build-Depends: debhelper (>= 8.0.0), cmake, git, greatcmakecookoff,
+ libblas-dev, libtiff5-dev, libfftw3-dev
+Standards-Version: 3.9.4
+Homepage: https://github.com/astro-informatics/sopt
+
+Package: sopt
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: package to perform Sparse OPTimisation
+ SOPT is a C package to perform Sparse OPTimisation.  It solves a
+ variety of sparse regularisation problems, including the SARA
+ algorithm.  Prototype Matlab implementations of various algorithms
+ are also included.  
