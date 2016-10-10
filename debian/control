@@ -21,7 +21,7 @@ Build-Depends: catch,
 Standards-Version: 3.9.8
 Homepage: http://basp-group.github.io/sopt/
 
-Package: libsopt2.1
+Package: libsopt2.0
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Section: libs
