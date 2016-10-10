@@ -7,7 +7,7 @@ Subject: Redefine SOVERSION
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/cpp/sopt/CMakeLists.txt b/cpp/sopt/CMakeLists.txt
-index 4e8fe4f..a9cbc02 100644
+index 4e8fe4f..d9bb412 100644
 --- a/cpp/sopt/CMakeLists.txt
 +++ b/cpp/sopt/CMakeLists.txt
 @@ -19,7 +19,7 @@ endif()
@@ -15,7 +15,7 @@ index 4e8fe4f..a9cbc02 100644
  add_dependencies(sopt lookup_dependencies)
  set(version "${Sopt_VERSION_MAJOR}.${Sopt_VERSION_MINOR}.${Sopt_VERSION_PATCH}")
 -set_target_properties(sopt PROPERTIES VERSION ${version} SOVERSION ${version})
-+set_target_properties(sopt PROPERTIES VERSION ${version} SOVERSION ${Sopt_VERSION_MAJOR})
++set_target_properties(sopt PROPERTIES VERSION ${version} SOVERSION "${Sopt_VERSION_MAJOR}.${Sopt_VERSION_MINOR}")
  
  target_include_directories(sopt PUBLIC
    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>
