@@ -1,0 +1,35 @@
+From: Ole Streicher <olebole@debian.org>
+Date: Sun, 9 Oct 2016 21:22:57 +0200
+Subject: Enable testing
+
+---
+ CMakeLists.txt                 | 2 +-
+ cpp/tests/common_catch_main.cc | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 25eb995..cfec89b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -7,7 +7,7 @@ list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_files/GreatCMakeCookOf
+ 
+ set(Sopt_VERSION 2.0.0)
+ 
+-option(tests          "Enable testing"                         off)
++option(tests          "Enable testing"                         on)
+ option(python         "Enable python"                          off)
+ option(benchmarks     "Enable benchmarking"                    off)
+ option(examples       "Enable Examples"                        off)
+diff --git a/cpp/tests/common_catch_main.cc b/cpp/tests/common_catch_main.cc
+index d277b52..f03551a 100644
+--- a/cpp/tests/common_catch_main.cc
++++ b/cpp/tests/common_catch_main.cc
+@@ -8,7 +8,7 @@
+ 
+ std::unique_ptr<std::mt19937_64> mersenne(new std::mt19937_64(0));
+ 
+-int main(int argc, char const *argv[]) {
++int main(int argc, char *const *argv) {
+   Catch::Session session; // There must be exactly once instance
+ 
+   int returnCode = session.applyCommandLine(argc, argv);

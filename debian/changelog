@@ -1,11 +1,5 @@
-sopt (0.1-1kern1) xenial; urgency=medium
+sopt (2.0.0-1) UNRELEASED; urgency=low
 
-  * first kern release
+  * Initial release. (Closes: #832659)
 
- -- Gijs Molenaar (launchpad ppa build key) <gijs@pythonic.nl>  Wed, 06 Jul 2016 11:35:01 +0000
-
-sopt (0.1-1trusty) trusty; urgency=low
-
-  * Initial release
-
- -- Gijs Molenaar (launchpad ppa build key) <gijs@pythonic.nl>  Tue, 24 Mar 2015 10:19:44 +0200
+ -- Ole Streicher <olebole@debian.org>  Sat, 08 Oct 2016 13:50:01 +0200

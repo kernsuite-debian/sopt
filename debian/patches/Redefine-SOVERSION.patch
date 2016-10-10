@@ -1,0 +1,21 @@
+From: Ole Streicher <olebole@debian.org>
+Date: Sun, 9 Oct 2016 17:23:11 +0200
+Subject: Redefine SOVERSION
+
+---
+ cpp/sopt/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/cpp/sopt/CMakeLists.txt b/cpp/sopt/CMakeLists.txt
+index 4e8fe4f..a9cbc02 100644
+--- a/cpp/sopt/CMakeLists.txt
++++ b/cpp/sopt/CMakeLists.txt
+@@ -19,7 +19,7 @@ endif()
+ add_library(sopt SHARED ${sources})
+ add_dependencies(sopt lookup_dependencies)
+ set(version "${Sopt_VERSION_MAJOR}.${Sopt_VERSION_MINOR}.${Sopt_VERSION_PATCH}")
+-set_target_properties(sopt PROPERTIES VERSION ${version} SOVERSION ${version})
++set_target_properties(sopt PROPERTIES VERSION ${version} SOVERSION ${Sopt_VERSION_MAJOR})
+ 
+ target_include_directories(sopt PUBLIC
+   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>
