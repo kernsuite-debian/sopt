@@ -41,7 +41,7 @@ Description: Sparse OPTimisation shared library
 Package: libsopt-dev
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: libsopt2.0 (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
 Description: Development package for Sparse OPTimisation library
  SOPT is a C package to perform Sparse OPTimisation.  It solves a
  variety of sparse regularisation problems, including the SARA
