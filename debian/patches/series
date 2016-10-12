@@ -1,3 +1,4 @@
 Remove-reference-to-GreatCMakeCookOff.patch
 Redefine-SOVERSION.patch
 Fix-test.patch
+Multiarch-patch.patch

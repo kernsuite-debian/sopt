@@ -1,0 +1,22 @@
+From: Ole Streicher <olebole@debian.org>
+Date: Wed, 12 Oct 2016 08:40:01 +0200
+Subject: Multiarch patch
+
+---
+ cpp/sopt/CMakeLists.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/cpp/sopt/CMakeLists.txt b/cpp/sopt/CMakeLists.txt
+index d9bb412..47a7c21 100644
+--- a/cpp/sopt/CMakeLists.txt
++++ b/cpp/sopt/CMakeLists.txt
+@@ -51,7 +51,7 @@ install(FILES ${wavelet_headers} DESTINATION include/sopt/wavelets)
+ install(TARGETS sopt
+   EXPORT SoptCPPTargets
+   DESTINATION share/cmake/sopt
+-  LIBRARY DESTINATION lib
+-  ARCHIVE DESTINATION lib
++  LIBRARY DESTINATION lib/${DEB_BUILD_MULTIARCH}
++  ARCHIVE DESTINATION lib/${DEB_BUILD_MULTIARCH}
+   INCLUDES DESTINATION include
+ )
