@@ -6,9 +6,3 @@
 
 %:
 	dh $@ --parallel --buildsystem=cmake
-
-override_dh_clean:
-	dh_clean
-	rm -rf images/wavedec.tiff
-
-
