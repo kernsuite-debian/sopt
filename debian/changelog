@@ -1,4 +1,4 @@
-sopt (2.0.0-2) xenial; urgency=low
+sopt (2.0.0-2) unstable; urgency=low
 
   * Remove unneeded pandas dependency
 
