@@ -13,7 +13,6 @@ Build-Depends: catch,
                libtiff5-dev,
                python,
                python-numpy,
-               python-pandas,
                python-pytest,
                python-scipy,
 	       python-setuptools
