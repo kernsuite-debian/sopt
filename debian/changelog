@@ -1,8 +1,8 @@
-sopt (2.0.0-1kern1) xenial; urgency=medium
+sopt (2.0.0-2) xenial; urgency=low
 
-  * rebuild for kern
+  * Remove unneeded pandas dependency
 
- -- Gijs Molenaar (launchpad ppa build key) <gijs@pythonic.nl>  Tue, 18 Oct 2016 12:00:59 +0200
+ -- Ole Streicher <olebole@debian.org>  Wed, 07 Dec 2016 11:50:40 +0100
 
 sopt (2.0.0-1) unstable; urgency=low
 
