@@ -1,3 +1,10 @@
+sopt (2.0.0-3) unstable; urgency=medium
+
+  * Logging api changed. Disabling colors for now. (Closes: #884219)
+  * Push Standards-Version to 4.1.2. Use https in all urls
+
+ -- Ole Streicher <olebole@debian.org>  Tue, 12 Dec 2017 21:27:02 +0100
+
 sopt (2.0.0-2) unstable; urgency=low
 
   * Remove unneeded pandas dependency
