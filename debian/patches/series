@@ -2,3 +2,4 @@ Remove-reference-to-GreatCMakeCookOff.patch
 Redefine-SOVERSION.patch
 Fix-test.patch
 Multiarch-patch.patch
+Logging-api-changed.-Disabling-colors-for-now.patch
