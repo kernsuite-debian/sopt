@@ -3,3 +3,4 @@ Redefine-SOVERSION.patch
 Fix-test.patch
 Multiarch-patch.patch
 Logging-api-changed.-Disabling-colors-for-now.patch
+Disable-power_method-test.patch

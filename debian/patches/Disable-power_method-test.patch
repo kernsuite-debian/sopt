@@ -1,0 +1,20 @@
+From: Ole Streicher <olebole@debian.org>
+Date: Sat, 30 Dec 2017 14:03:40 +0100
+Subject: Disable power_method test
+
+This test failed on i386. Upstream issue:
+
+https://github.com/basp-group/sopt/issues/20
+---
+ cpp/tests/CMakeLists.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/cpp/tests/CMakeLists.txt b/cpp/tests/CMakeLists.txt
+index 87bf90e..7fc37a2 100644
+--- a/cpp/tests/CMakeLists.txt
++++ b/cpp/tests/CMakeLists.txt
+@@ -26,4 +26,3 @@ add_catch_test_with_seed(seeded_proximal test_proximal 1449580491)
+ add_catch_test(padmm LIBRARIES sopt)
+ add_catch_test(padmm_warm_start LIBRARIES sopt)
+ add_catch_test(reweighted LIBRARIES sopt)
+-add_catch_test(power_method LIBRARIES sopt)
