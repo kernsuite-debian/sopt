@@ -1,0 +1,21 @@
+From: Ole Streicher <olebole@debian.org>
+Date: Sun, 30 Sep 2018 10:38:07 +0200
+Subject: Add spdlog header
+
+Closes: #909765
+---
+ cpp/sopt/logging.enabled.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/cpp/sopt/logging.enabled.h b/cpp/sopt/logging.enabled.h
+index 9e45fde..053e145 100644
+--- a/cpp/sopt/logging.enabled.h
++++ b/cpp/sopt/logging.enabled.h
+@@ -3,6 +3,7 @@
+ 
+ #include "sopt/config.h"
+ #include <spdlog/spdlog.h>
++#include <spdlog/sinks/stdout_sinks.h>
+ #include <spdlog/fmt/ostr.h>
+ #include "sopt/exception.h"
+ 
