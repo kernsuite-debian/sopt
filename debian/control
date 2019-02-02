@@ -6,7 +6,7 @@ Uploaders: Gijs Molenaar <gijs@pythonic.nl>, Ole Streicher <olebole@debian.org>
 Build-Depends: catch,
                cmake,
                cython,
-               debhelper (>= 11),
+               debhelper (>= 12),
                libblas-dev,
                libeigen3-dev,
                libspdlog-dev,
