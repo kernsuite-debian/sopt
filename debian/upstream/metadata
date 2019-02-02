@@ -1,5 +1,5 @@
 ASCL-Id: 1307.020
-Bug-Database: https://github.com/basp-group/sopt/issues
+Bug-Database: https://github.com/astro-informatics/sopt/issues
 Name: SOPT
 Reference: 
  Author: >
@@ -10,4 +10,4 @@ Reference:
  Year: 2016
  Eprint: http://www.jasonmcewen.org/papers/purify_real_data.pdf
  URL: http://www.jasonmcewen.org/publications.html#pratley:purify_real_data
-Repository: https://github.com/basp-group/sopt
+Repository: https://github.com/astro-informatics/sopt

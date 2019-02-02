@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: sopt
-Source: https://github.com/basp-group/sopt/
+Source: hhttps://github.com/astro-informatics/sopt/
 
 Files: *
 Copyright: 2013-2016 Rafael Carrillo, Jason McEwen, Yves Wiaux

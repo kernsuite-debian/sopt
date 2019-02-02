@@ -19,7 +19,7 @@ Build-Depends: catch,
 Standards-Version: 4.2.1
 Vcs-Git: https://salsa.debian.org/debian-astro-team/sopt.git
 Vcs-Browser: https://salsa.debian.org/debian-astro-team/sopt
-Homepage: https://basp-group.github.io/sopt/
+Homepage: https://astro-informatics.github.io/sopt/
 
 Package: libsopt2.0
 Architecture: any
