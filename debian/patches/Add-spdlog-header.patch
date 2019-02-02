@@ -8,14 +8,14 @@ Closes: #909765
  1 file changed, 1 insertion(+)
 
 diff --git a/cpp/sopt/logging.enabled.h b/cpp/sopt/logging.enabled.h
-index 9e45fde..053e145 100644
+index b5eb6c1..7499cce 100644
 --- a/cpp/sopt/logging.enabled.h
 +++ b/cpp/sopt/logging.enabled.h
-@@ -3,6 +3,7 @@
- 
+@@ -4,6 +4,7 @@
  #include "sopt/config.h"
+ #include <spdlog/fmt/ostr.h>
  #include <spdlog/spdlog.h>
 +#include <spdlog/sinks/stdout_sinks.h>
- #include <spdlog/fmt/ostr.h>
  #include "sopt/exception.h"
  
+ namespace sopt {

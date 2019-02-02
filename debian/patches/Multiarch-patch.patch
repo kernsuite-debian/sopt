@@ -7,10 +7,10 @@ Subject: Multiarch patch
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/cpp/sopt/CMakeLists.txt b/cpp/sopt/CMakeLists.txt
-index d9bb412..47a7c21 100644
+index 94ebcf7..fa54108 100644
 --- a/cpp/sopt/CMakeLists.txt
 +++ b/cpp/sopt/CMakeLists.txt
-@@ -51,7 +51,7 @@ install(FILES ${wavelet_headers} DESTINATION include/sopt/wavelets)
+@@ -64,7 +64,7 @@ install(FILES ${mpi_headers} DESTINATION include/sopt/mpi)
  install(TARGETS sopt
    EXPORT SoptCPPTargets
    DESTINATION share/cmake/sopt
@@ -19,4 +19,4 @@ index d9bb412..47a7c21 100644
 +  LIBRARY DESTINATION lib/${DEB_BUILD_MULTIARCH}
 +  ARCHIVE DESTINATION lib/${DEB_BUILD_MULTIARCH}
    INCLUDES DESTINATION include
- )
+   )

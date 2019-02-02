@@ -9,17 +9,20 @@ GreatCMakeCookOff into Debian.
 
 URL of GreatCMakeCookOff is https://github.com/UCL/GreatCMakeCookOff
 ---
- CMakeLists.txt                 |  22 +++-----
- cmake_files/AddCatchTest.cmake | 112 +++++++++++++++++++++++++++++++++++++++++
- cmake_files/dependencies.cmake |   6 +--
- 3 files changed, 122 insertions(+), 18 deletions(-)
+ CMakeLists.txt                     |  16 ++----
+ cmake_files/AddCatchTest.cmake     | 112 +++++++++++++++++++++++++++++++++++++
+ cmake_files/dependencies.cmake     |   6 +-
+ cpp/sopt/CMakeLists.txt            |   1 -
+ cpp/tests/CMakeLists.txt           |   2 -
+ cpp/tools_for_tests/CMakeLists.txt |   1 -
+ 6 files changed, 119 insertions(+), 19 deletions(-)
  create mode 100644 cmake_files/AddCatchTest.cmake
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 7600912..bb38997 100644
+index f1d057d..55835f6 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -3,21 +3,15 @@ project(Sopt CXX)
+@@ -3,18 +3,12 @@ project(Sopt CXX)
  
  # Location of extra cmake includes for the project
  list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_files)
@@ -34,31 +37,22 @@ index 7600912..bb38997 100644
 +set(Sopt_VERSION 2.0.0)
  
  option(tests          "Enable testing"                         on)
--option(python         "Enable python"                          on)
--option(benchmarks     "Enable benchmarking"                    on)
+ option(benchmarks     "Enable benchmarking"                    off)
 -option(examples       "Enable Examples"                        on)
-+option(python         "Enable python"                          off)
-+option(benchmarks     "Enable benchmarking"                    off)
 +option(examples       "Enable Examples"                        off)
  option(logging        "Enable logging"                         on)
--option(regressions    "Enable regressions"                     on)
-+option(regressions    "Enable regressions"                     off)
+ option(regressions    "Enable regressions"                     off)
  option(openmp         "Enable OpenMP"                          on)
- option(archer         "Compiling on ARCHER"                    off)
- 
-@@ -29,12 +23,12 @@ if(tests)
+@@ -36,9 +30,9 @@ if(tests)
  endif()
  
  # Add c++11 stuff
 -include(AddCPP11Flags)
 -include(CheckCXX11Features)
+-cxx11_feature_check(REQUIRED unique_ptr nullptr override constructor_delegate)
 +set(CXX11_FLAGS "${CXX11_FLAGS} -std=gnu++11")
 +set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CXX11_FLAGS}")
 +set(PROJECT_USES_CPP11 True CACHE INTERNAL "Uses c++11.")
- if(tests AND python)
-   include(AddPyTest)
- endif()
--cxx11_feature_check(REQUIRED unique_ptr nullptr override constructor_delegate)
  include(compilations)
  
  # search/install dependencies
@@ -181,17 +175,61 @@ index 0000000..177612b
 +  endif()
 +endfunction()
 diff --git a/cmake_files/dependencies.cmake b/cmake_files/dependencies.cmake
-index 1810b99..3fffa97 100644
+index 16c3252..84fc414 100644
 --- a/cmake_files/dependencies.cmake
 +++ b/cmake_files/dependencies.cmake
 @@ -1,8 +1,6 @@
 -include(PackageLookup)  # check for existence, or install external projects
 -
--lookup_package(Eigen3 ARGUMENTS HG_REPOSITORY https://bitbucket.org/LukePratley/eigen)
+-lookup_package(Eigen3 REQUIRED DOWNLOAD_BY_DEFAULT ARGUMENTS URL "http://bitbucket.org/eigen/eigen/get/3.2.tar.gz" MD5 "035ccc791f046f48e90bb1fb42ce227e")
 +find_package(Eigen3 REQUIRED)
  if(logging)
 -  lookup_package(spdlog REQUIRED)
 +  find_package(spdlog REQUIRED)
  endif()
  
- find_package(TIFF)
+ if(docs)
+diff --git a/cpp/sopt/CMakeLists.txt b/cpp/sopt/CMakeLists.txt
+index b1ce018..94ebcf7 100644
+--- a/cpp/sopt/CMakeLists.txt
++++ b/cpp/sopt/CMakeLists.txt
+@@ -25,7 +25,6 @@ if(SOPT_MPI)
+ endif()
+ 
+ add_library(sopt SHARED ${sources})
+-add_dependencies(sopt lookup_dependencies)
+ set(version "${Sopt_VERSION_MAJOR}.${Sopt_VERSION_MINOR}.${Sopt_VERSION_PATCH}")
+ set(soversion "${Sopt_VERSION_MAJOR}.${Sopt_VERSION_MINOR}")
+ set_target_properties(sopt PROPERTIES VERSION ${version} SOVERSION ${soversion})
+diff --git a/cpp/tests/CMakeLists.txt b/cpp/tests/CMakeLists.txt
+index 200678e..4292a56 100644
+--- a/cpp/tests/CMakeLists.txt
++++ b/cpp/tests/CMakeLists.txt
+@@ -10,7 +10,6 @@ if(logging)
+     "${PROJECT_BINARY_DIR}/include/"
+     "${CMAKE_CURRENT_SOURCE_DIR}/.."
+     )
+-  add_dependencies(common_catch_main_object lookup_dependencies)
+ endif()
+ if(CATCH_HAS_THROWS_AS)
+   add_definitions(-DCATCH_HAS_THROWS_AS)
+@@ -38,7 +37,6 @@ add_catch_test(bisection_method LIBRARIES sopt)
+ 
+ if(SOPT_MPI)
+   add_library(common_mpi_catch_main_object OBJECT common_mpi_catch_main.cc)
+-  add_dependencies(common_mpi_catch_main_object lookup_dependencies)
+   target_include_directories(common_mpi_catch_main_object
+     PUBLIC ${PROJECT_SOURCE_DIR}/cpp ${PROJECT_BINARY_DIR}/include ${MPI_CXX_INCLUDE_PATH})
+   if(SPDLOG_INCLUDE_DIR)
+diff --git a/cpp/tools_for_tests/CMakeLists.txt b/cpp/tools_for_tests/CMakeLists.txt
+index db1ada3..4435426 100644
+--- a/cpp/tools_for_tests/CMakeLists.txt
++++ b/cpp/tools_for_tests/CMakeLists.txt
+@@ -11,7 +11,6 @@ endif()
+ if(EIGEN3_INCLUDE_DIR)
+   target_include_directories(tools_for_tests SYSTEM PUBLIC ${EIGEN3_INCLUDE_DIR})
+ endif()
+-add_dependencies(tools_for_tests lookup_dependencies)
+ 
+ # Simple manual tester of read/write tiff
+ add_executable(copy_tiff copy_tiff.cc)
