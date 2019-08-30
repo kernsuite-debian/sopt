@@ -1,3 +1,12 @@
+sopt (3.0.0-2) unstable; urgency=low
+
+  * Remove unused Python build dependencies (Closes: #938514)
+  * Push Standards-Version to 4.4.0. No changes needed.
+  * Remove d/compat
+  * Add gitlab-ci.yml for salsa
+
+ -- Ole Streicher <olebole@debian.org>  Fri, 30 Aug 2019 11:49:28 +0200
+
 sopt (3.0.0-1) unstable; urgency=low
 
   * Update github organization name
