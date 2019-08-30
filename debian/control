@@ -5,7 +5,7 @@ Maintainer: Debian Astro Team <debian-astro-maintainers@lists.alioth.debian.org>
 Uploaders: Gijs Molenaar <gijs@pythonic.nl>, Ole Streicher <olebole@debian.org>
 Build-Depends: catch,
                cmake,
-               debhelper (>= 12),
+               debhelper-compat (= 12),
                libblas-dev,
                libeigen3-dev,
                libspdlog-dev,
