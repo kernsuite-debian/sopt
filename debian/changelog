@@ -1,20 +1,14 @@
-sopt (3.0.0-2) unstable; urgency=low
-
-  * Remove unused Python build dependencies (Closes: #938514)
-  * Push Standards-Version to 4.4.0. No changes needed.
-  * Remove d/compat
-  * Add gitlab-ci.yml for salsa
-
- -- Ole Streicher <olebole@debian.org>  Fri, 30 Aug 2019 11:49:28 +0200
-
-sopt (3.0.0-1) unstable; urgency=low
+sopt (3.0.1-1) experimental; urgency=medium
 
   * Update github organization name
-  * New upstream version 3.0.0. Rediff patches
-  * Push Standards-Version to 4.3.0. No changes required
-  * Push compat to 12
+  * Remove unused Python build dependencies (Closes: #938514)
+  * Push Standards-Version to 4.4.0. No changes needed.
+  * Push compat to 12. Remove d/compat
+  * Add gitlab-ci.yml for salsa
+  * New upstream version 3.0.1. Rediff patches
+  * Update SOVERSION. Switch to experimental to prepare transition.
 
- -- Ole Streicher <olebole@debian.org>  Sat, 02 Feb 2019 11:15:59 +0100
+ -- Ole Streicher <olebole@debian.org>  Fri, 30 Aug 2019 12:25:00 +0200
 
 sopt (2.0.0-5) unstable; urgency=medium
 
