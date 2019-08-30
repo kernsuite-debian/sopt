@@ -19,7 +19,7 @@ URL of GreatCMakeCookOff is https://github.com/UCL/GreatCMakeCookOff
  create mode 100644 cmake_files/AddCatchTest.cmake
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index f1d057d..55835f6 100644
+index 7ed9641..a735610 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -3,18 +3,12 @@ project(Sopt CXX)
@@ -32,9 +32,9 @@ index f1d057d..55835f6 100644
  
 -# Version and git hash id
 -include(VersionAndGitRef)
--set_version(2.0.0)
+-set_version(3.0.1)
 -get_gitref()
-+set(Sopt_VERSION 2.0.0)
++set(Sopt_VERSION 3.0.1)
  
  option(tests          "Enable testing"                         on)
  option(benchmarks     "Enable benchmarking"                    off)
