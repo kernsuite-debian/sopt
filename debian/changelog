@@ -1,3 +1,10 @@
+sopt (3.0.1-2) unstable; urgency=low
+
+  * Switch to unstable to start transition
+  * Fix test_credible_region on i386
+
+ -- Ole Streicher <olebole@debian.org>  Fri, 20 Sep 2019 11:30:50 +0200
+
 sopt (3.0.1-1) experimental; urgency=medium
 
   * Update github organization name
