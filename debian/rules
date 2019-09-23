@@ -4,7 +4,7 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-CMAKE_FLAGS += -DDEB_BUILD_MULTIARCH=`dpkg-architecture -qDEB_BUILD_MULTIARCH`
+CMAKE_FLAGS += -DDEB_HOST_MULTIARCH=`dpkg-architecture -qDEB_HOST_MULTIARCH`
 
 %:
 	dh $@ --buildsystem=cmake
