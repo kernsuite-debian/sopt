@@ -17,6 +17,7 @@ Homepage: https://astro-informatics.github.io/sopt/
 
 Package: libsopt3.0
 Architecture: any
+Multi-Arch: same
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Section: libs
 Description: Sparse OPTimisation shared library
