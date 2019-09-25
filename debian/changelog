@@ -1,3 +1,13 @@
+sopt (3.0.1-3) unstable; urgency=low
+
+  [ Helmut Grohne ]
+  * Fix build/host confusion (Closes: #941037)
+
+  [ Ole Streicher ]
+  * Mark shared lib as Multi-Arch:same
+
+ -- Ole Streicher <olebole@debian.org>  Wed, 25 Sep 2019 10:14:38 +0200
+
 sopt (3.0.1-2) unstable; urgency=low
 
   * Switch to unstable to start transition
