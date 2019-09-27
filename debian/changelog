@@ -1,3 +1,9 @@
+sopt (3.0.1-5) unstable; urgency=low
+
+  * Increase tolerance in test_proximal to fix FTBFS on mips
+
+ -- Ole Streicher <olebole@debian.org>  Fri, 27 Sep 2019 10:34:50 +0200
+
 sopt (3.0.1-4) unstable; urgency=low
 
   * Fix FTBFS on i386
