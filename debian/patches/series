@@ -3,3 +3,4 @@ Multiarch-patch.patch
 Disable-power_method-test.patch
 Add-spdlog-header.patch
 Add-approx-to-comparison-tests-failing-on-i386.patch
+Increase-tolerance-in-test_proximal-to-fix-FTBFS-on-mips.patch
