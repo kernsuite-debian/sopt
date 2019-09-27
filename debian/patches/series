@@ -2,4 +2,4 @@ Remove-reference-to-GreatCMakeCookOff.patch
 Multiarch-patch.patch
 Disable-power_method-test.patch
 Add-spdlog-header.patch
-Fix-test_credible_region-on-i386.patch
+Add-approx-to-comparison-tests-failing-on-i386.patch

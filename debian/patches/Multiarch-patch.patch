@@ -7,7 +7,7 @@ Subject: Multiarch patch
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/cpp/sopt/CMakeLists.txt b/cpp/sopt/CMakeLists.txt
-index 94ebcf7..fa54108 100644
+index 94ebcf7..fc53c02 100644
 --- a/cpp/sopt/CMakeLists.txt
 +++ b/cpp/sopt/CMakeLists.txt
 @@ -64,7 +64,7 @@ install(FILES ${mpi_headers} DESTINATION include/sopt/mpi)

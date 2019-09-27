@@ -1,0 +1,35 @@
+From: Luke Pratley <luke.pratley.15@ucl.ac.uk>
+Date: Wed, 25 Sep 2019 14:38:18 +0100
+Subject: Add approx to comparison tests failing on i386
+
+---
+ cpp/tests/credible_region.cc | 2 +-
+ cpp/tests/primal_dual.cc     | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/cpp/tests/credible_region.cc b/cpp/tests/credible_region.cc
+index 5243cea..bc99cf3 100644
+--- a/cpp/tests/credible_region.cc
++++ b/cpp/tests/credible_region.cc
+@@ -22,7 +22,7 @@ TEST_CASE("calculating gamma") {
+   for (t_uint i = 1; i < 10; i++) {
+     const t_real alpha = 0.9 + i * 0.01;
+     const t_real gamma = credible_region::compute_energy_upper_bound(alpha, x, energy_function);
+-    CHECK(gamma == N * (std::sqrt(16 * std::log(3 / (1 - alpha)) / N) + 1));
++    CHECK(gamma == Approx(N * (std::sqrt(16 * std::log(3 / (1 - alpha)) / N) + 1)));
+   }
+ }
+ TEST_CASE("caculating upper and lower interval") {
+diff --git a/cpp/tests/primal_dual.cc b/cpp/tests/primal_dual.cc
+index afff13b..ce8c447 100644
+--- a/cpp/tests/primal_dual.cc
++++ b/cpp/tests/primal_dual.cc
+@@ -48,7 +48,7 @@ TEST_CASE("Primal Dual, testing norm(output - target()) < l2ball_epsilon()",
+ 
+   auto const result = primaldual();
+ 
+-  CHECK((result.x - target).stableNorm() <= epsilon);
++  CHECK((result.x - target).stableNorm() <= Approx(epsilon));
+ }
+ 
+ TEST_CASE("Primal Dual, testing norm(output - target()) < l2ball_epsilon() no positive quadrant",
