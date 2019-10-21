@@ -1,3 +1,10 @@
+sopt (3.0.1-7) unstable; urgency=low
+
+  * Add MPI support
+  * Push Standards-Version to 4.4.1. No changes needed
+
+ -- Ole Streicher <olebole@debian.org>  Mon, 21 Oct 2019 10:17:37 +0200
+
 sopt (3.0.1-6) unstable; urgency=low
 
   * Further increase tolerance for mips
