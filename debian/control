@@ -8,6 +8,7 @@ Build-Depends: catch,
                debhelper-compat (= 12),
                libblas-dev,
                libeigen3-dev,
+               libopenmpi-dev,
                libspdlog-dev,
                libtiff5-dev,
                mpi-default-dev
