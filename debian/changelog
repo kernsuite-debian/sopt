@@ -1,3 +1,9 @@
+sopt (3.0.1-8) unstable; urgency=medium
+
+  * Add libopenmpi-dev build dependency (Closes: #943812)
+
+ -- Ole Streicher <olebole@debian.org>  Fri, 01 Nov 2019 12:50:31 +0100
+
 sopt (3.0.1-7) unstable; urgency=low
 
   * Add MPI support
