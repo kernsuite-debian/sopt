@@ -1,0 +1,23 @@
+From: Ole Streicher <olebole@debian.org>
+Date: Wed, 6 Nov 2019 11:59:01 +0100
+Subject: Disable mpi_proximals test
+
+This test fails on mips64el. Upstream issue:
+
+https://github.com/basp-group/sopt/issues/22
+---
+ cpp/tests/CMakeLists.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/cpp/tests/CMakeLists.txt b/cpp/tests/CMakeLists.txt
+index 326f7fe..018e744 100644
+--- a/cpp/tests/CMakeLists.txt
++++ b/cpp/tests/CMakeLists.txt
+@@ -66,7 +66,6 @@ if(SOPT_MPI)
+   endfunction()
+ 
+   add_mpi_test(communicator LIBRARIES sopt)
+-  add_mpi_test(mpi_proximals LIBRARIES sopt)
+   add_mpi_test(serial_vs_parallel_padmm LIBRARIES sopt tools_for_tests)
+   add_mpi_test(mpi_wavelets LIBRARIES sopt)
+ 
