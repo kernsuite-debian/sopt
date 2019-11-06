@@ -1,3 +1,9 @@
+sopt (3.0.1-10) unstable; urgency=medium
+
+  * Disable mpi_proximals test
+
+ -- Ole Streicher <olebole@debian.org>  Wed, 06 Nov 2019 12:00:39 +0100
+
 sopt (3.0.1-9) unstable; urgency=medium
 
   * Add libopenmpi-dev dependency to libsopt-dev (Closes: #943812)
