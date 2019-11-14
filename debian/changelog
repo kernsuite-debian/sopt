@@ -9,7 +9,7 @@ sopt (3.0.1-9) unstable; urgency=medium
   * Add libopenmpi-dev dependency to libsopt-dev (Closes: #943812)
     Keep the build dependency as well.
 
- -- Ole Streicher <ole@poch>  Sun, 03 Nov 2019 14:27:10 +0100
+ -- Ole Streicher <olebole@debian.org>  Sun, 03 Nov 2019 14:27:10 +0100
 
 sopt (3.0.1-8) unstable; urgency=medium
 
